@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     libpq-dev \
-    lipzip-dev \
+    libzip-dev \
 && docker-php-ext-install -j$(nproc) intl \
 && docker-php-ext-install -j$(nproc) pcntl \
 && docker-php-ext-install -j$(nproc) zip \
