@@ -1,6 +1,16 @@
 version: "3"
 
 services:
+    web:
+        image: nginx:latest
+        container_name: web
+        volumes:
+            - ./docker/web:/etc/nginx/conf.d
+            - ./app:/var/www/html
+        depends_on:
+            - php
+        ports:
+            - 8000:80
     php:
         build: ./docker/php
         container_name: php
